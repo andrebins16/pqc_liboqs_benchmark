@@ -3,7 +3,6 @@ liboqs/
 assinaturas/
 chaves/
 arquivos_entrada/
-resultados_tempos_medias/
 
 __pycache__/
 *.pyc

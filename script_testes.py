@@ -7,18 +7,18 @@ import os
 import subprocess
 from cryptography.hazmat.primitives.asymmetric import rsa, padding
 from cryptography.hazmat.primitives import serialization, hashes
-from algoritmos_classicos_funcoes import gera_chaves_rsa, assina_rsa, verifica_rsa
+from algoritmos_classicos_funcoes import gera_chaves_rsa, assina_rsa, verifica_rsa, gera_chaves_ecc, assina_ecc, verifica_ecc
 
-repeticoes = 1
+repeticoes = 100
 
 diretorio_chaves = "chaves"
 diretorio_assinaturas = "assinaturas"
 diretorio_arquivos_entrada = "arquivos_entrada"
 diretorio_resultados = "resultados_tempos_medias"
 
-lista_algoritmos_classicos = [{"nome":"RSA", "funcao_gera":gera_chaves_rsa, "funcao_assina":assina_rsa, "funcao_verifica":verifica_rsa}]
+lista_algoritmos_classicos = [{"nome":"RSA", "funcao_gera":gera_chaves_rsa, "funcao_assina":assina_rsa, "funcao_verifica":verifica_rsa}, {"nome":"ECC", "funcao_gera":gera_chaves_ecc, "funcao_assina":assina_ecc, "funcao_verifica":verifica_ecc}]
 lista_arquivos = [{"nome": "10MB", "tamanho_mb": 10}, {"nome": "100MB", "tamanho_mb": 100}, {"nome": "1GB", "tamanho_mb": 1024}] 
-lista_algoritmos = ["Dilithium5", "Falcon-1024", "SPHINCS+-SHAKE-256s-simple", "RSA"]
+lista_algoritmos = ["Dilithium5", "Falcon-1024", "SPHINCS+-SHAKE-256s-simple", "RSA","ECC"]
 lista_combinada_algoritmos_arquivos = [{"algoritmo": alg, "arquivo": arq["nome"]} for alg in lista_algoritmos for arq in lista_arquivos]
 
 dicionario_tempos_geracao = {}
