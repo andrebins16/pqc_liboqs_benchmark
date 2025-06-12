@@ -16,9 +16,10 @@ diretorio_assinaturas = "assinaturas"
 diretorio_arquivos_entrada = "arquivos_entrada"
 diretorio_resultados = "resultados_tempos_medias"
 
+
 lista_algoritmos_classicos = [{"nome":"RSA", "funcao_gera":gera_chaves_rsa, "funcao_assina":assina_rsa, "funcao_verifica":verifica_rsa}, {"nome":"ECC", "funcao_gera":gera_chaves_ecc, "funcao_assina":assina_ecc, "funcao_verifica":verifica_ecc}]
 lista_arquivos = [{"nome": "10MB", "tamanho_mb": 10}, {"nome": "100MB", "tamanho_mb": 100}, {"nome": "1GB", "tamanho_mb": 1024}] 
-lista_algoritmos = ["Dilithium5", "Falcon-1024", "SPHINCS+-SHAKE-256s-simple", "RSA","ECC"]
+lista_algoritmos = ["Dilithium2", "Dilithium3", "Dilithium5", "Falcon-512", "Falcon-1024", "SPHINCS+-SHA2-128f-simple", "SPHINCS+-SHA2-128s-simple", "SPHINCS+-SHA2-192f-simple", "SPHINCS+-SHA2-192s-simple", "SPHINCS+-SHA2-256f-simple", "SPHINCS+-SHA2-256s-simple", "SPHINCS+-SHAKE-128f-simple", "SPHINCS+-SHAKE-128s-simple", "SPHINCS+-SHAKE-192f-simple", "SPHINCS+-SHAKE-192s-simple", "SPHINCS+-SHAKE-256f-simple", "SPHINCS+-SHAKE-256s-simple", "RSA","ECC"]
 lista_combinada_algoritmos_arquivos = [{"algoritmo": alg, "arquivo": arq["nome"]} for alg in lista_algoritmos for arq in lista_arquivos]
 
 dicionario_tempos_geracao = {}
